@@ -68,8 +68,8 @@ class productcontroller extends Controller
             'deskripsi_barang' => $rq->input('deskripsi_barang')
         ];
 
-        if($rq->hasFile('gambar')) {
-            $products["gambar_barang"] = $rq->file('gambar')->store('image', 'public');
+        if($rq->hasFile('gambar_barang')) {
+            $products["gambar_barang"] = $rq->file('gambar_barang')->store('image', 'public');
         }
 
         product::query()->where("id",$id)->update($products);
